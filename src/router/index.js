@@ -11,5 +11,14 @@ export default new Router({
       name: 'HelloWorld',
       component: HelloWorld
     }
-  ]
+  ],
+  scrollBehavior (to, from, next) {
+    if (to.hash) {
+      return {selector: to.hash}
+    }
+    return {
+      x: 0,
+      y: 0
+    }
+  }
 })
